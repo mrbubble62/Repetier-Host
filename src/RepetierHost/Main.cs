@@ -30,7 +30,6 @@ using RepetierHost.model.geom;
 using Microsoft.Win32;
 using System.Threading;
 using System.Diagnostics;
-using RepetierHost.model;
 using RepetierHost.connector;
 using System.Runtime.InteropServices;
 using RepetierHost.view.calibration;

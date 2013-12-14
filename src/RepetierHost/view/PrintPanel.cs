@@ -771,6 +771,20 @@ namespace RepetierHost.view
             con.injectManualCommand("M84");
         }
 
+        private void buttonPreHeatABS_Click(object sender, EventArgs e)
+        {
+            con.injectManualCommand("M190 S115");
+            con.injectManualCommand("M140 S120 P1"); 
+            con.injectManualCommand("M104 S240 P1");
+        }
+
+        private void buttonPreHeatPLA_Click(object sender, EventArgs e)
+        {
+            con.injectManualCommand("M190 S50");
+            con.injectManualCommand("M140 S60 P1");
+            con.injectManualCommand("M104 S180 P1");
+        }
+
         private void timer_Tick(object sender, EventArgs e)
         {
             if(FormPrinterSettings.ps.printerType!=3)
