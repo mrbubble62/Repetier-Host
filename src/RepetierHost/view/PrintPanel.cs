@@ -773,16 +773,16 @@ namespace RepetierHost.view
 
         private void buttonPreHeatABS_Click(object sender, EventArgs e)
         {
-            con.injectManualCommand("M190 S115");
-            con.injectManualCommand("M140 S120 P1"); 
-            con.injectManualCommand("M104 S240 P1");
+            con.injectManualCommand("M190 S117");
+            con.injectManualCommand("M140 S120 F1"); 
+            con.injectManualCommand("M104 S240 F1");
         }
 
         private void buttonPreHeatPLA_Click(object sender, EventArgs e)
         {
             con.injectManualCommand("M190 S50");
-            con.injectManualCommand("M140 S60 P1");
-            con.injectManualCommand("M104 S180 P1");
+            con.injectManualCommand("M140 S60 F1");
+            con.injectManualCommand("M104 S180 F1");
         }
 
         private void timer_Tick(object sender, EventArgs e)
