@@ -354,6 +354,7 @@ namespace RepetierHost.view
             buttonHomeZ.Enabled = c;
             buttonStopMotor.Enabled = c;
             switchPower.Enabled = c;
+            switchLights.Enabled = c;
             textRetractAmount.Enabled = c;
             textExtrudeSpeed.Enabled = c;
             textExtrudeAmount.Enabled = c;
@@ -669,6 +670,19 @@ namespace RepetierHost.view
                 con.injectManualCommand("M81");
             }
             con.connector.ReturnInjectLock();
+        }
+
+        private void switchLights_Change(SwitchButton b)
+        {        
+            if (!createCommands) return;
+            if (switchLights.On)
+            {
+                con.injectManualCommand("M42 P4 S255");
+            }
+            else
+            {
+                con.injectManualCommand("M42 P4 S0");
+            }
         }
 
         private void textGCode_KeyDown(object sender, KeyEventArgs e)

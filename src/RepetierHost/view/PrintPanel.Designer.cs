@@ -94,6 +94,7 @@
             this.switchPower = new RepetierHost.view.SwitchButton();
             this.buttonPreHeatABS = new System.Windows.Forms.Button();
             this.buttonPreHeatPLA = new System.Windows.Forms.Button();
+            this.switchLights = new RepetierHost.view.SwitchButton();
             this.groupExtruder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textRetractAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textExtrudeAmount)).BeginInit();
@@ -563,9 +564,9 @@
             // 
             this.buttonGoDisposeArea.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.buttonGoDisposeArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGoDisposeArea.Location = new System.Drawing.Point(335, 330);
+            this.buttonGoDisposeArea.Location = new System.Drawing.Point(369, 330);
             this.buttonGoDisposeArea.Name = "buttonGoDisposeArea";
-            this.buttonGoDisposeArea.Size = new System.Drawing.Size(84, 23);
+            this.buttonGoDisposeArea.Size = new System.Drawing.Size(74, 23);
             this.buttonGoDisposeArea.TabIndex = 8;
             this.buttonGoDisposeArea.Text = "Park";
             this.buttonGoDisposeArea.UseVisualStyleBackColor = true;
@@ -586,7 +587,7 @@
             // 
             this.buttonStopMotor.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.buttonStopMotor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStopMotor.Location = new System.Drawing.Point(211, 330);
+            this.buttonStopMotor.Location = new System.Drawing.Point(245, 330);
             this.buttonStopMotor.Name = "buttonStopMotor";
             this.buttonStopMotor.Size = new System.Drawing.Size(119, 23);
             this.buttonStopMotor.TabIndex = 7;
@@ -1017,10 +1018,10 @@
             this.switchPower.ButtonFlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.switchPower.ButtonTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.switchPower.Location = new System.Drawing.Point(8, 330);
-            this.switchPower.MinimumSize = new System.Drawing.Size(100, 23);
+            this.switchPower.MinimumSize = new System.Drawing.Size(65, 23);
             this.switchPower.Name = "switchPower";
             this.switchPower.On = false;
-            this.switchPower.Size = new System.Drawing.Size(100, 23);
+            this.switchPower.Size = new System.Drawing.Size(65, 23);
             this.switchPower.TabIndex = 6;
             this.switchPower.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.switchPower.TextOff = "  Power";
@@ -1029,7 +1030,7 @@
             // 
             // buttonPreHeatABS
             // 
-            this.buttonPreHeatABS.Location = new System.Drawing.Point(113, 330);
+            this.buttonPreHeatABS.Location = new System.Drawing.Point(151, 330);
             this.buttonPreHeatABS.Name = "buttonPreHeatABS";
             this.buttonPreHeatABS.Size = new System.Drawing.Size(43, 23);
             this.buttonPreHeatABS.TabIndex = 56;
@@ -1039,7 +1040,7 @@
             // 
             // buttonPreHeatPLA
             // 
-            this.buttonPreHeatPLA.Location = new System.Drawing.Point(162, 329);
+            this.buttonPreHeatPLA.Location = new System.Drawing.Point(197, 330);
             this.buttonPreHeatPLA.Name = "buttonPreHeatPLA";
             this.buttonPreHeatPLA.Size = new System.Drawing.Size(43, 23);
             this.buttonPreHeatPLA.TabIndex = 57;
@@ -1047,12 +1048,31 @@
             this.buttonPreHeatPLA.UseVisualStyleBackColor = true;
             this.buttonPreHeatPLA.Click += new System.EventHandler(this.buttonPreHeatPLA_Click);
             // 
+            // switchLights
+            // 
+            this.switchLights.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.switchLights.ButtonFlatBorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.switchLights.ButtonFlatBorderSize = 1;
+            this.switchLights.ButtonFlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.switchLights.ButtonTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.switchLights.Location = new System.Drawing.Point(78, 330);
+            this.switchLights.MinimumSize = new System.Drawing.Size(40, 23);
+            this.switchLights.Name = "switchLights";
+            this.switchLights.On = false;
+            this.switchLights.Size = new System.Drawing.Size(68, 23);
+            this.switchLights.TabIndex = 58;
+            this.switchLights.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.switchLights.TextOff = " Lights";
+            this.switchLights.TextOn = " Lights";
+            this.switchLights.OnChange += new RepetierHost.view.SwitchEventHandler(this.switchLights_Change);
+            // 
             // PrintPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.switchLights);
             this.Controls.Add(this.buttonPreHeatPLA);
             this.Controls.Add(this.buttonPreHeatABS);
             this.Controls.Add(this.groupSpeedMultiply);
@@ -1175,5 +1195,6 @@
         public System.Windows.Forms.ComboBox comboExtruder;
         private System.Windows.Forms.Button buttonPreHeatPLA;
         private System.Windows.Forms.Button buttonPreHeatABS;
+        private SwitchButton switchLights;
     }
 }
